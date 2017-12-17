@@ -1,5 +1,13 @@
-<h1>Nueva cursada</h1>
-
-<%= render 'form', course: @course %>
-
-<%= link_to 'Back', courses_path %>
+<div class="container">
+  <div class="card new-form">
+    <div class="row">
+      <div class="col">
+        <h1>New Course</h1>
+      </div>
+      <div class="col text-right">
+        <%= link_to 'Back', courses_path, class: "btn btn-secondary" %>
+      </div>
+    </div>
+    <%= render 'form', course: @course %>
+  </div>
+</div>

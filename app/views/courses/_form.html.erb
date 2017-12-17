@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :title %>
-    <%= form.text_field :title, id: :course_title %>
+    <%= form.text_field :title, id: :course_title, class: "form-control", placeholder: "Enter title" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :year %>
-    <%= form.number_field :year, id: :course_year %>
+    <%= form.number_field :year, id: :course_year, class: "form-control", placeholder: "Year" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>
