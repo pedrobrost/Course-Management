@@ -2,11 +2,6 @@ class ExamsController < ApplicationController
   before_action :set_exams
   before_action :set_exam, only: [:show, :edit, :update, :destroy]
 
-  # GET courses/1/exams
-  def index
-    @exams = @course.exams
-  end
-
   # GET courses/1/exams/1
   def show
   end
