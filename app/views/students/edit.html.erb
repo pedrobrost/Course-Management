@@ -1,6 +1,13 @@
-<h1>Editing student</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', [@student.course, @student] %> |
-<%= link_to 'Back', course_students_path(@student.course) %>
+<div class="container">
+  <div class="card card-box">
+    <div class="row">
+      <div class="col">
+        <h1>Edit Student</h1>
+      </div>
+      <div class="col text-right">
+        <%= link_to 'Back', course_students_path(@student.course), class: "btn btn-secondary" %>
+      </div>
+    </div>
+    <%= render 'form' %>
+  </div>
+</div>
