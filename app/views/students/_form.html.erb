@@ -11,27 +11,28 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, class: "form-control", placeholder: "Name" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name, class: "form-control", placeholder: "Last Name" %>
   </div>
-  <div class="field">
-    <%= f.label :dni %><br />
-    <%= f.text_field :dni %>
+  <div class="form-group">
+    <%= f.label :dni, 'DNI' %><br />
+    <%= f.text_field :dni, class: "form-control", placeholder: "DNI" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :number %><br />
-    <%= f.text_field :number %>
+    <%= f.text_field :number, class: "form-control", placeholder: "Number" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.text_field :email, class: "form-control", placeholder: "Email" %>
   </div>
+  <br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
