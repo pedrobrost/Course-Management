@@ -1,16 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @course.title %>
-</p>
+<div class="container box">
+  <div class="row">
+    <div class="col">
+      <h1><%= @course.title %></h1>
+    </div>
+    <div class="col text-right">
+      <%= link_to 'Back', courses_path, class: "btn btn-secondary" %>
+      <%= link_to 'Edit', edit_course_path(@course), class: "btn btn-info" %>
+    </div>
+  </div>
+  <p>
+    <strong>Year:</strong>
+    <%= @course.year %>
+  </p>
 
-<p>
-  <strong>Year:</strong>
-  <%= @course.year %>
-</p>
-
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %> |
-<%= link_to 'Exams', course_exams_path(@course) %> |
-<%= link_to 'Students', course_students_path(@course) %>
+  <div class="row">
+    <% @course.exams.each do |exam| %>
+      <div class="col-4">
+        <div class="card style="width: 20rem;"">
+          <div class="card-body">
+            <h4 class="card-title"><%= exam.title %></h4>
+            <h6 class="card-subtitle mb-2 text-muted"><%= exam.date.to_formatted_s(:long) %></h6>
+            <%= link_to "View", course_exam_path(@course, exam), class: "card-link" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <hr/>
+  <div class="row">
+    <div class="col">
+      <%= link_to 'New Exam', new_course_exam_path(@course), class: "btn btn-primary" %>
+      <%= link_to 'Students', course_students_path(@course), class: "btn btn-primary" %>
+      <%= link_to 'Summary', "#", class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
