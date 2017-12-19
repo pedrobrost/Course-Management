@@ -11,19 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
+    <%= f.text_field :title, class: "form-control", placeholder: "Title" %>
+  <div class="form-group">
     <%= f.label :date %><br />
     <%= f.datetime_select :date %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :minimum %><br />
-    <%= f.text_field :minimum %>
+    <%= f.number_field :minimum, class: "form-control", placeholder: "Minimum" %>
   </div>
+  <br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
