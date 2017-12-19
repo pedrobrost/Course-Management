@@ -3,8 +3,9 @@
     <div class="col">
       <h1>Students</h1>
     </div>
-    <div class="col-2">
-      <%= link_to 'New Student', new_course_student_path(@course), class: "btn btn-primary" %>
+    <div class="col-4 text-right">
+      <%= link_to 'New Student', new_course_student_path(@course), class: "btn btn-outline-primary" %>
+      <%= link_to 'Back', course_path(@course), class: "btn btn-secondary" %>
     </div>
   </div>
   <blockquote class="blockquote">
@@ -53,7 +54,7 @@
               <%= link_to edit_course_student_path(student.course, student), class: "btn btn-outline-primary" do %>
                 <i class="fas fa-edit"></i>
               <% end %>
-              <%= link_to [student.course, student], :confirm => 'Are you sure?', :method => :delete, class: "btn btn-outline-primary" do %>
+              <%= link_to [student.course, student], :data => {:confirm => 'Are you sure?'}, :method => :delete, class: "btn btn-outline-primary" do %>
                 <i class="fas fa-trash"></i>
               <% end %>
             </td>
