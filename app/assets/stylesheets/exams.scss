@@ -1,3 +1,8 @@
 // Place all the styles related to the exams controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.results-table tr td:last-child {
+    white-space: nowrap;
+    width: 120px;
+}

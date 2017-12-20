@@ -1,9 +1,12 @@
 class ExamsController < ApplicationController
   before_action :set_exams
-  before_action :set_exam, only: [:show, :edit, :update, :destroy]
+  before_action :set_exam, only: [:show, :edit, :update, :destroy, :change_results]
 
   # GET courses/1/exams/1
   def show
+    @exam.course.students.each do |std|
+      @exam.results.find_or_initialize_by(student: std)
+    end
   end
 
   # GET courses/1/exams/new
@@ -42,6 +45,14 @@ class ExamsController < ApplicationController
     redirect_to course_exams_url(@course)
   end
 
+  def change_results
+    if @exam.update(results_params)
+      redirect_to(course_exam_url(@exam.course, @exam), notice: 'Results updated')
+    else
+      render action: 'show'
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_exams
@@ -55,5 +66,9 @@ class ExamsController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def exam_params
       params.require(:exam).permit(:title, :date, :minimum)
+    end
+
+    def results_params
+      params.require(:exam).permit(results_attributes: [:id, :score, :student_id])
     end
 end
