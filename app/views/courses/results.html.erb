@@ -15,14 +15,16 @@
   <% @exams = @course.exams.order('date') %>
 
   <div class="row">
-    <table class="table table-striped table-bordered results-table" cellspacing="0" width="100%">
+    <table class="table table-striped table-bordered" cellspacing="0" width="100%">
       <thead>
         <tr>
           <th scope="col">Name</th>
           <th scope="col">DNI</th>
           <th scope="col">Number</th>
           <% @exams.each do |exam| %>
-            <th scope="col"><%= exam.title %></th>
+            <th scope="col">
+              <%= link_to exam.title, course_exam_path(@course, exam) %> 
+            </th>
           <% end %>
         </tr>
       </thead>
@@ -33,7 +35,16 @@
             <td><%= student.dni %></td>
             <td><%= student.number %></td>
             <% @exams.each do |exam| %>
-              <td><%= student.score_for(exam) %></td>
+              <% if student.attended_to?(exam) %>
+                <% score = student.score_for(exam) %>
+                <% if student.passed?(exam) %>
+                  <td class="exam-td text-success"><%= score %></td>
+                <% else %>
+                  <td class="exam-td text-danger"><%= score %></td>
+                <% end %>
+              <% else %>
+                <td class="exam-td text-secondary">Absent</td>
+              <% end %>
             <% end %>
           </tr>
         <% end %>
