@@ -6,5 +6,8 @@ Rails.application.routes.draw do
         patch :results, to: "exams#change_results"
       end
     end
+    member do
+      get :results
+    end
   end
 end

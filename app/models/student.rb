@@ -6,4 +6,8 @@ class Student < ApplicationRecord
     "#{last_name}, #{first_name}"
   end
 
+  def score_for(exam)
+    results.where(exam_id: exam.id).take.try(:score) || "Absent"
+  end
+
 end
