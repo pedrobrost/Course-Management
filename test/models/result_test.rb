@@ -10,4 +10,9 @@ class ResultTest < ActiveSupport::TestCase
     assert results(:five).approved?
   end
 
+  test 'should not save empty result' do
+    result = Result.new
+    assert_not result.save
+  end
+
 end

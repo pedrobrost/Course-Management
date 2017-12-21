@@ -34,4 +34,9 @@ class ExamTest < ActiveSupport::TestCase
     assert_equal(50, exams(:two).approved_percentage)
   end
 
+  test 'should not save empty exam' do
+    exam = Exam.new
+    assert_not exam.save
+  end
+
 end

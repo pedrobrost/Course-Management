@@ -22,4 +22,9 @@ class StudentTest < ActiveSupport::TestCase
     assert_not students(:one).passed?(exams(:one))
   end
 
+  test 'should not save empty student' do
+    student = Student.new
+    assert_not student.save
+  end
+
 end

@@ -9,11 +9,7 @@ class CourseTest < ActiveSupport::TestCase
     @course = Course.new
   end
 
-  test 'should not save course without title' do
-    assert_not @course.save
-  end
-
-  test 'should not save course without year' do
+  test 'should not save empty course' do
     assert_not @course.save
   end
 
