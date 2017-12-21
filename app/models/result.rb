@@ -8,7 +8,7 @@ class Result < ApplicationRecord
   validates :exam, uniqueness: { scope: :student }
 
   def approved?
-    score.try(:>=, exam.minimum)
+    score >= exam.minimum
   end
 
 end
