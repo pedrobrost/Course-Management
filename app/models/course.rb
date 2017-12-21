@@ -6,7 +6,7 @@ class Course < ApplicationRecord
   validates :year,
     presence: true,
     numericality: { :only_integer => true },
-    inclusion: { in: 1900..Date.today.year }
+    inclusion: { in: 1900..(Date.today + 10.years).year }
 
   def has_students?
     students.any?

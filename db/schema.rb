@@ -12,35 +12,35 @@
 
 ActiveRecord::Schema.define(version: 20171221023150) do
 
-  create_table "courses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "courses", force: :cascade do |t|
     t.integer "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
   end
 
-  create_table "exams", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "course_id"
+  create_table "exams", force: :cascade do |t|
+    t.integer "course_id"
     t.string "title"
     t.datetime "date"
-    t.float "minimum", limit: 24
+    t.float "minimum"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["course_id"], name: "index_exams_on_course_id"
   end
 
-  create_table "results", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "exam_id"
-    t.bigint "student_id"
-    t.float "score", limit: 24
+  create_table "results", force: :cascade do |t|
+    t.integer "exam_id"
+    t.integer "student_id"
+    t.float "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["exam_id"], name: "index_results_on_exam_id"
     t.index ["student_id"], name: "index_results_on_student_id"
   end
 
-  create_table "students", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "course_id"
+  create_table "students", force: :cascade do |t|
+    t.integer "course_id"
     t.string "first_name"
     t.string "last_name"
     t.string "dni"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20171221023150) do
     t.index ["course_id"], name: "index_students_on_course_id"
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -68,8 +68,4 @@ ActiveRecord::Schema.define(version: 20171221023150) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "exams", "courses"
-  add_foreign_key "results", "exams"
-  add_foreign_key "results", "students"
-  add_foreign_key "students", "courses"
 end
