@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :courses do
     resources :students
     resources :exams do
@@ -10,4 +11,6 @@ Rails.application.routes.draw do
       get :results
     end
   end
+
+  root to: "courses#index"
 end
