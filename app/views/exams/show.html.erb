@@ -7,7 +7,7 @@
     </div>
     <div class="col text-right">
       <%= link_to 'Edit', edit_course_exam_path(@exam.course, @exam), class: "btn btn-info" %>
-      <%= link_to "Back", request.referer.present? ? request.referer : course_exam_path(@exam.course), class: "btn btn-secondary" %>
+      <%= link_to "Back", course_path(@exam.course), class: "btn btn-secondary" %>
     </div>
   </div>
   <p>
