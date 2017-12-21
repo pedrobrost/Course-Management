@@ -1,13 +1,11 @@
 class Student < ApplicationRecord
-  has_many :results
+  has_many :results, :dependent => :restrict_with_error
   belongs_to :course
 
   validates_presence_of :first_name, :last_name, :dni, :number, :email
-
   validates :dni,
     length: { in: 6..11 },
     numericality: { only_integer: true }
-
    validates_email_format_of :email
 
   def to_s

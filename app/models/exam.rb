@@ -1,13 +1,11 @@
 class Exam < ApplicationRecord
-  has_many :results
+  has_many :results, :dependent => :restrict_with_error
   belongs_to :course
 
   accepts_nested_attributes_for :results, reject_if: proc { |a| a['score'].blank? }
 
-  validates :title, presence: true
-  validates :date, presence: true
+  validates_presence_of :title, :date, :minimum
   validates :minimum,
-    presence: true,
     numericality: true
 
   def approved
