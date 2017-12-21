@@ -4,13 +4,13 @@
       <h1><%= @course.title %></h1>
     </div>
     <div class="col text-right">
-      <%= link_to 'Edit', edit_course_path(@course), class: "btn btn-info" %>
-      <%= link_to 'Delete', course_path(@course), :data => {:confirm => 'Are you sure?'}, :method => :delete, class: "btn btn-danger" %>
-      <%= link_to 'Back', courses_path, class: "btn btn-secondary" %>
+      <%= link_to 'Editar', edit_course_path(@course), class: "btn btn-info" %>
+      <%= link_to 'Eliminar', course_path(@course), :data => {:confirm => 'Are you sure?'}, :method => :delete, class: "btn btn-danger" %>
+      <%= link_to 'Atrás', courses_path, class: "btn btn-secondary" %>
     </div>
   </div>
   <p>
-    <strong>Year:</strong>
+    <strong>Año:</strong>
     <%= @course.year %>
   </p>
 
@@ -21,7 +21,7 @@
           <div class="card-body">
             <h4 class="card-title"><%= exam.title %></h4>
             <h6 class="card-subtitle mb-2 text-muted"><%= exam.date.to_formatted_s(:long) %></h6>
-            <%= link_to "View", course_exam_path(@course, exam), class: "card-link" %>
+            <%= link_to "Ver", course_exam_path(@course, exam), class: "card-link" %>
           </div>
         </div>
       </div>
@@ -30,9 +30,9 @@
   <hr/>
   <div class="row">
     <div class="col">
-      <%= link_to 'New Exam', new_course_exam_path(@course), class: "btn btn-primary" %>
-      <%= link_to 'Students', course_students_path(@course), class: "btn btn-primary" %>
-      <%= link_to 'Results', results_course_path(@course), class: "btn btn-primary" %>
+      <%= link_to 'Nuevo examen', new_course_exam_path(@course), class: "btn btn-primary" %>
+      <%= link_to 'Alumnos', course_students_path(@course), class: "btn btn-primary" %>
+      <%= link_to 'Resultados', results_course_path(@course), class: "btn btn-primary" %>
     </div>
   </div>
 </div>

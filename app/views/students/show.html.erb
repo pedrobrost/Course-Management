@@ -5,18 +5,18 @@
         <h1><%= @student.last_name %> <%= @student.first_name %></h1>
       </div>
       <div class="col text-right">
-        <%= link_to 'Edit', edit_course_student_path(@student.course, @student), class: "btn btn-secondary" %>
-        <%= link_to 'Back', course_students_path(@student.course), class: "btn btn-secondary" %>
+        <%= link_to 'Editar', edit_course_student_path(@student.course, @student), class: "btn btn-secondary" %>
+        <%= link_to 'Atrás', course_students_path(@student.course), class: "btn btn-secondary" %>
       </div>
     </div>
     <hr>
     <p>
-      <b>Dni:</b>
+      <b>DNI:</b>
       <%= @student.dni %>
     </p>
 
     <p>
-      <b>Number:</b>
+      <b>Legajo:</b>
       <%= @student.number %>
     </p>
 

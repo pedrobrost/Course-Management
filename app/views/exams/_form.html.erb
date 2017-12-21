@@ -14,18 +14,18 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :title %><br />
+    <%= f.label :title, 'Título' %><br />
     <%= f.text_field :title, class: "form-control", placeholder: "Title" %>
   <div class="form-group">
-    <%= f.label :date %><br />
+    <%= f.label :date, "Fecha" %><br />
     <%= f.datetime_select :date %>
   </div>
   <div class="form-group">
-    <%= f.label :minimum %><br />
+    <%= f.label :minimum, 'Nota mínima' %><br />
     <%= f.number_field :minimum, class: "form-control", step: :any, placeholder: "Minimum" %>
   </div>
   <br>
   <div class="actions">
-    <%= f.submit class: "btn btn-primary" %>
+    <%= f.submit 'Guardar examen', class: "btn btn-primary" %>
   </div>
 <% end %>

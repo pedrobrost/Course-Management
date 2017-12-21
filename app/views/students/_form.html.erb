@@ -14,11 +14,11 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :first_name %><br />
+    <%= f.label :first_name, 'Nombre' %><br />
     <%= f.text_field :first_name, class: "form-control", placeholder: "Name" %>
   </div>
   <div class="form-group">
-    <%= f.label :last_name %><br />
+    <%= f.label :last_name, 'Apellido' %><br />
     <%= f.text_field :last_name, class: "form-control", placeholder: "Last Name" %>
   </div>
   <div class="form-group">
@@ -26,7 +26,7 @@
     <%= f.text_field :dni, class: "form-control", placeholder: "DNI" %>
   </div>
   <div class="form-group">
-    <%= f.label :number %><br />
+    <%= f.label :number, 'Legajo' %><br />
     <%= f.text_field :number, class: "form-control", placeholder: "Number" %>
   </div>
   <div class="form-group">
@@ -35,6 +35,6 @@
   </div>
   <br>
   <div class="actions">
-    <%= f.submit class: "btn btn-primary" %>
+    <%= f.submit 'Guardar alumno', class: "btn btn-primary" %>
   </div>
 <% end %>
