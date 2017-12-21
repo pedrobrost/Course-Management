@@ -1,13 +1,15 @@
 <%= form_for([@exam.course, @exam]) do |f| %>
   <% if @exam.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@exam.errors.count, "error") %> prohibited this exam from being saved:</h2>
-
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <%= pluralize(@exam.errors.count, "error") %> prohibited this course from being saved:
       <ul>
-      <% @exam.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+      <% @exam.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
       <% end %>
       </ul>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
   <% end %>
 
