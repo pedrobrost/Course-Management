@@ -43,8 +43,11 @@ class StudentsController < ApplicationController
   # DELETE courses/1/students/1
   def destroy
     @student.destroy
-
-    redirect_to course_students_url(@course)
+    if @student.errors.empty?
+      redirect_to(course_students_url, notice: 'Student was successfully destroyed.')
+    else
+      redirect_to(course_students_url, alert: 'No se pudo borrar el estudiante')
+    end
   end
 
   private

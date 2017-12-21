@@ -41,8 +41,11 @@ class ExamsController < ApplicationController
   # DELETE courses/1/exams/1
   def destroy
     @exam.destroy
-
-    redirect_to course_exams_url(@course)
+    if @exam.errors.empty?
+      redirect_to(course_url(@exam.course), notice: 'Exam was successfully destroyed.')
+    else
+      redirect_to(course_exam_url, alert: 'No se pudo borrar el examen')
+    end
   end
 
   def change_results
