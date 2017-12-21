@@ -8,4 +8,8 @@ class Course < ApplicationRecord
     numericality: { :only_integer => true },
     inclusion: { in: 1900..Date.today.year }
 
+  def has_students?
+    students.any?
+  end
+
 end
