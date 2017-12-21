@@ -2,12 +2,12 @@
 
 one:
   course: one
-  title: MyString
+  title: "Rails"
   date: 2017-12-17 11:25:01
-  minimum: 1.5
+  minimum: 9
 
 two:
-  course: two
-  title: MyString
+  course: one
+  title: "Sinatra"
   date: 2017-12-17 11:25:01
-  minimum: 1.5
+  minimum: 8

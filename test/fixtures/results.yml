@@ -2,8 +2,35 @@
 
 one:
   exam: one
-  score: 1.5
+  student: one
+  score: 8.9
 
 two:
+  exam: one
+  student: two
+  score: 7
+
+three:
+  exam: one
+  student: three
+  score: 1
+
+four:
   exam: two
-  score: 1.5
+  student: one
+  score: 8
+
+five:
+  exam: two
+  student: two
+  score: 8.1
+
+six:
+  exam: two
+  student: three
+  score: 7
+
+seven:
+  exam: two
+  student: four
+  score: 7

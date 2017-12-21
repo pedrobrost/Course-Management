@@ -2,16 +2,32 @@
 
 one:
   course: one
-  first_name: MyString
-  last_name: MyString
-  dni: MyString
-  number: MyString
-  email: MyString
+  first_name: "Pedro"
+  last_name: "Brost"
+  dni: 40289549
+  number: "13775/5"
+  email: "pedro.brost97@gmail.com"
 
 two:
-  course: two
-  first_name: MyString
-  last_name: MyString
-  dni: MyString
-  number: MyString
-  email: MyString
+  course: one
+  first_name: "Juan"
+  last_name: "Perez"
+  dni: 4021356
+  number: 13256/9
+  email: "juan@gmail.com"
+
+three:
+  course: one
+  first_name: "Marcos"
+  last_name: "Perez"
+  dni: 40256457
+  number: 13654/9
+  email: "marcos@gmail.com"
+
+four:
+  course: one
+  first_name: "Jorge"
+  last_name: "Perez"
+  dni: 40256123
+  number: 12654/8
+  email: "jorge@gmail.com"
