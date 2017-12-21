@@ -4,6 +4,12 @@ class Exam < ApplicationRecord
 
   accepts_nested_attributes_for :results, reject_if: proc { |a| a['score'].blank? }
 
+  validates :title, presence: true
+  validates :date, presence: true
+  validates :minimum,
+    presence: true,
+    numericality: true
+
   def approved
     results.select(&:approved?).size
   end
