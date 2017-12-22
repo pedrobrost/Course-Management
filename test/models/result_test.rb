@@ -15,4 +15,18 @@ class ResultTest < ActiveSupport::TestCase
     assert_not result.save
   end
 
+  test 'should not save result with negative score' do
+    result = Result.new
+    result.score = -55
+    assert_not result.save
+  end
+
+  test 'should not save result with string score' do
+    result = Result.new
+    result.score = "five"
+    assert_not result.save
+  end
+
+
+
 end
