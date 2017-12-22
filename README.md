@@ -4,7 +4,6 @@
 
 * Git
 * Bundler gem
-* ver ndoe
 * PostgreSQL
 
 ## Setup
@@ -22,6 +21,12 @@ Luego se debe instalar las gemas requeridas por el proyecto mediante `Bundler`
 $ bundle install
 ```
 
+Si se encuentra en un entorno corriendo `Ubuntu`, es muy probable que necesite instalar lo siguiente:
+
+```bash
+$ sudo apt install libpq-dev
+```
+
 Para especificar las credenciales de la base de datos se utiliza `Figaro` por lo tanto primero se debe ejecutar:
 
 ```bash
@@ -37,6 +42,8 @@ development:
   DB_USERNAME: #nombre de usuario
   DB_PASSWORD: #contraseña
 ```
+
+Al tratarse de una base de datos PostgreSQL, si existe un `rol` con nuestro mismo nombre de usuario, no es necesario configurar ninguna credencial.
 
 La preparación de la base de datos se realiza ejecutando:
 
