@@ -44,7 +44,7 @@ class ExamsController < ApplicationController
     if @exam.errors.empty?
       redirect_to(course_url(@exam.course), notice: 'El examen fue eliminado exitosamente.')
     else
-      redirect_to(course_exam_url, alert: 'No se pudo borrar el examen')
+      redirect_to(course_exam_url, alert: 'No se puede eliminar ya que hay notas cargadas en el examen.')
     end
   end
 

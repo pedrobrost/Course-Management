@@ -58,7 +58,7 @@ class CoursesController < ApplicationController
     if @course.errors.empty?
       redirect_to(courses_url, notice: 'El curso fue elimiado exitosamente.')
     else
-      redirect_to(course_url, alert: 'No se pudo borrar el curso.')
+      redirect_to(course_url, alert: 'No se puede eliminar ya que existen alumnos y/o exámenes en el curso.')
     end
   end
 

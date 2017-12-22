@@ -46,7 +46,7 @@ class StudentsController < ApplicationController
     if @student.errors.empty?
       redirect_to(course_students_url, notice: 'El alumno fue eliminado exitosamente.')
     else
-      redirect_to(course_students_url, alert: 'No se pudo borrar el estudiante')
+      redirect_to(course_students_url, alert: 'No se puede eliminar ya que el alumno posee notas cargadas.')
     end
   end
 
