@@ -7,7 +7,8 @@ class Exam < ApplicationRecord
   validates_presence_of :title, :date, :minimum
   validate :correct_year
   validates :minimum,
-    numericality: true
+    numericality: { :greater_than_or_equal_to => 0 }
+    
 
   def approved
     results.select(&:approved?).size
