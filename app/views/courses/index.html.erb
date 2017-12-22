@@ -15,7 +15,7 @@
           </div>
      <% end %>
     </div>
-    <% @courses.each do |course| %>
+    <% @courses.order(year: :desc).each do |course| %>
       <div class="col-lg-2 col-sm-6">
         <%= link_to course do %>
           <div class="card">
