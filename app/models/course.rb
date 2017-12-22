@@ -4,6 +4,7 @@ class Course < ApplicationRecord
 
   validates :year,
     presence: true,
+    uniqueness: true,
     numericality: { :only_integer => true },
     length: { is: 4 },
     inclusion: { in: 1900..(Date.today + 10.years).year }
