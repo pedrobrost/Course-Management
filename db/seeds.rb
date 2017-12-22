@@ -20,7 +20,7 @@ Course.all.each do |course|
   4.times do |i|
     title = "Examen #{i}"
     score = rand(5..10)
-    date = Time.zone.today + i.days
+    date = Time.zone.today.change(year: course.year) + i.days
     Exam.create(course: course,
                 title: title,
                 minimum: score,
