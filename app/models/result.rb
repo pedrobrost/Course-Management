@@ -3,7 +3,8 @@ class Result < ApplicationRecord
   belongs_to :student
 
   validates :score,
-    numericality: { :greater_than_or_equal_to => 0 }
+    numericality: { :greater_than_or_equal_to => 0 },
+    allow_nil: true
   validates :student, uniqueness: { scope: :exam }
   validates :exam, uniqueness: { scope: :student }
 
