@@ -21,7 +21,7 @@ class Exam < ApplicationRecord
   end
 
   def approved_percentage
-    (approved * 100) / course.students.size
+    (approved * 100.00) / course.students.size
   end
 
 end
