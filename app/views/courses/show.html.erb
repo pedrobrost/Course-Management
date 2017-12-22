@@ -20,7 +20,7 @@
         <div class="card style="width: 20rem;"">
           <div class="card-body">
             <h4 class="card-title"><%= exam.title %></h4>
-            <h6 class="card-subtitle mb-2 text-muted"><%= exam.date.to_formatted_s(:long) %></h6>
+            <h6 class="card-subtitle mb-2 text-muted"><%= exam.date.strftime("%m/%d/%Y") %></h6>
             <%= link_to "Ver", course_exam_path(@course, exam), class: "card-link" %>
           </div>
         </div>

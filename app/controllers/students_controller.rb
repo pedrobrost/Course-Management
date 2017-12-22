@@ -25,7 +25,7 @@ class StudentsController < ApplicationController
     @student = @course.students.build(student_params)
 
     if @student.save
-      redirect_to([@student.course, @student], notice: 'Student was successfully created.')
+      redirect_to([@student.course, @student], notice: 'El alumno fue creado exitosamente.')
     else
       render action: 'new'
     end
@@ -34,7 +34,7 @@ class StudentsController < ApplicationController
   # PUT courses/1/students/1
   def update
     if @student.update_attributes(student_params)
-      redirect_to([@student.course, @student], notice: 'Student was successfully updated.')
+      redirect_to([@student.course, @student], notice: 'El alumno fue actualizado exitosamente.')
     else
       render action: 'edit'
     end
@@ -44,7 +44,7 @@ class StudentsController < ApplicationController
   def destroy
     @student.destroy
     if @student.errors.empty?
-      redirect_to(course_students_url, notice: 'Student was successfully destroyed.')
+      redirect_to(course_students_url, notice: 'El alumno fue eliminado exitosamente.')
     else
       redirect_to(course_students_url, alert: 'No se pudo borrar el estudiante')
     end

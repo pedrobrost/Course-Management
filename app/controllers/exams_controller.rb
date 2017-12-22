@@ -23,7 +23,7 @@ class ExamsController < ApplicationController
     @exam = @course.exams.build(exam_params)
 
     if @exam.save
-      redirect_to([@exam.course, @exam], notice: 'Exam was successfully created.')
+      redirect_to([@exam.course, @exam], notice: 'El examen fue creado exitosamente.')
     else
       render action: 'new'
     end
@@ -32,7 +32,7 @@ class ExamsController < ApplicationController
   # PUT courses/1/exams/1
   def update
     if @exam.update_attributes(exam_params)
-      redirect_to([@exam.course, @exam], notice: 'Exam was successfully updated.')
+      redirect_to([@exam.course, @exam], notice: 'El examen fue actualizado exitosamente.')
     else
       render action: 'edit'
     end
@@ -42,7 +42,7 @@ class ExamsController < ApplicationController
   def destroy
     @exam.destroy
     if @exam.errors.empty?
-      redirect_to(course_url(@exam.course), notice: 'Exam was successfully destroyed.')
+      redirect_to(course_url(@exam.course), notice: 'El examen fue eliminado exitosamente.')
     else
       redirect_to(course_exam_url, alert: 'No se pudo borrar el examen')
     end
@@ -50,7 +50,7 @@ class ExamsController < ApplicationController
 
   def change_results
     if @exam.update(results_params)
-      redirect_to(course_exam_url(@exam.course, @exam), notice: 'Results updated')
+      redirect_to(course_exam_url(@exam.course, @exam), notice: 'Las notas se actualizaron exitosamente.')
     else
       render action: 'show'
     end

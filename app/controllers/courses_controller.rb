@@ -28,7 +28,7 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       if @course.save
-        format.html { redirect_to @course, notice: 'Course was successfully created.' }
+        format.html { redirect_to @course, notice: 'El curso fue creado exitosamente.' }
         format.json { render :show, status: :created, location: @course }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class CoursesController < ApplicationController
   def update
     respond_to do |format|
       if @course.update(course_params)
-        format.html { redirect_to @course, notice: 'Course was successfully updated.' }
+        format.html { redirect_to @course, notice: 'El curso fue actualizado exitosamente.' }
         format.json { render :show, status: :ok, location: @course }
       else
         format.html { render :edit }
@@ -56,9 +56,9 @@ class CoursesController < ApplicationController
   def destroy
     @course.destroy
     if @course.errors.empty?
-      redirect_to(courses_url, notice: 'Course was successfully destroyed.')
+      redirect_to(courses_url, notice: 'El curso fue elimiado exitosamente.')
     else
-      redirect_to(course_url, alert: 'No se pudo borrar el curso')
+      redirect_to(course_url, alert: 'No se pudo borrar el curso.')
     end
   end
 
