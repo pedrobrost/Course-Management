@@ -48,9 +48,6 @@
               <%= student.email %>
             </td>
             <td>
-              <%= link_to [student.course, student], class: "btn btn-outline-primary" do %>
-                <i class="fas fa-eye"></i>
-              <% end %>
               <%= link_to edit_course_student_path(student.course, student), class: "btn btn-outline-primary" do %>
                 <i class="fas fa-edit"></i>
               <% end %>

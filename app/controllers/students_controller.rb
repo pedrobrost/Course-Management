@@ -7,10 +7,6 @@ class StudentsController < ApplicationController
     @students = @course.students
   end
 
-  # GET courses/1/students/1
-  def show
-  end
-
   # GET courses/1/students/new
   def new
     @student = @course.students.build
@@ -25,7 +21,7 @@ class StudentsController < ApplicationController
     @student = @course.students.build(student_params)
 
     if @student.save
-      redirect_to([@student.course, @student], notice: 'El alumno fue creado exitosamente.')
+      redirect_to(course_students_url, notice: 'El alumno fue creado exitosamente.')
     else
       render action: 'new'
     end
@@ -34,7 +30,7 @@ class StudentsController < ApplicationController
   # PUT courses/1/students/1
   def update
     if @student.update_attributes(student_params)
-      redirect_to([@student.course, @student], notice: 'El alumno fue actualizado exitosamente.')
+      redirect_to(course_students_url, notice: 'El alumno fue actualizado exitosamente.')
     else
       render action: 'edit'
     end
