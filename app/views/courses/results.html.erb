@@ -16,7 +16,7 @@
 
   <% if @course.has_students? %>
     <div class="row">
-      <table class="table table-striped table-bordered" cellspacing="0" width="100%">
+      <table class="table table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>
             <th scope="col">Nombre</th>
@@ -49,28 +49,28 @@
               <% end %>
             </tr>
           <% end %>
-            <tr>
+            <tr class="table-secondary">
               <td colspan="3">Aprobados</td>
               <% @exams.each do |exam| %>
                 <td scope="col"><%= exam.approved %></td>
               <% end %>
             </tr>
-            <tr>
+            <tr class="table-secondary">
               <td colspan="3">Desaprobados</td>
               <% @exams.each do |exam| %>
                 <td scope="col"><%= exam.failed %></td>
               <% end %>
             </tr>
-            <tr>
+            <tr class="table-secondary">
               <td colspan="3">Ausentes</td>
               <% @exams.each do |exam| %>
                 <td scope="col"><%= exam.absent_students %></td>
               <% end %>
             </tr>
-            <tr>
+            <tr class="table-secondary">
               <td colspan="3">Porcentaje de aprobación</td>
               <% @exams.each do |exam| %>
-                <td scope="col"><%= number_to_percentage(exam.approved_percentage, precision: 0) %></td>
+                <td scope="col"><%= number_to_percentage(exam.approved_percentage, precision: 2) %></td>
               <% end %>
             </tr>
         </tbody>
