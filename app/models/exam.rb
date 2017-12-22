@@ -2,7 +2,7 @@ class Exam < ApplicationRecord
   has_many :results, :dependent => :restrict_with_error
   belongs_to :course
 
-  accepts_nested_attributes_for :results, reject_if: proc { |a| a['score'].blank? }
+  accepts_nested_attributes_for :results
 
   validates_presence_of :title, :date, :minimum
   validate :correct_year
@@ -14,11 +14,11 @@ class Exam < ApplicationRecord
   end
 
   def failed
-    results.size - self.approved
+    real_results.size - self.approved
   end
 
   def absent_students
-    course.students.size - results.size
+    course.students.size - real_results.size
   end
 
   def approved_percentage
@@ -26,8 +26,12 @@ class Exam < ApplicationRecord
   end
 
   private
+  def real_results
+    results.select {|result| result.score.present? }
+  end
+
   def correct_year
-    errors.add(:date, "es anterior a el año del curso") unless date.year >= course.year
+    errors.add(:date, "es anterior a el año del curso") unless (date.present? && date.year >= course.year)
   end
 
 end
