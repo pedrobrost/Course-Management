@@ -9,7 +9,7 @@ class Student < ApplicationRecord
    validates_email_format_of :email
 
   def to_s
-    "#{last_name}, #{first_name}"
+    "#{first_name} #{last_name}"
   end
 
   def score_for(exam)
