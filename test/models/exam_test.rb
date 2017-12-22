@@ -39,4 +39,18 @@ class ExamTest < ActiveSupport::TestCase
     assert_not exam.save
   end
 
+  test 'should not save negative minimum' do
+    exam = Exam.new
+    exam.minimum = -44
+    assert_not exam.save
+  end
+
+  test 'should not destroy exam if it has scores' do
+    assert_not @exams(:one).destroy
+  end
+
+  test 'should destroy exam if it has not scores' do
+    assert_not @exams(:two).destroy
+  end
+
 end
