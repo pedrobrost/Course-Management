@@ -71,3 +71,12 @@ Para correr todos los tests se debe ejecutar:
 ```bash
 $ bin/rails test
 ```
+
+Además es posible ejecutar los tests de forma separada:
+
+```bash
+$ bin/rails test test/models/course_test.rb
+$ bin/rails test test/models/exam_test.rb
+$ bin/rails test test/models/result_test.rb
+$ bin/rails test test/models/student_test.rb
+```
