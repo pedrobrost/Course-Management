@@ -54,7 +54,7 @@
               <%= link_to edit_course_student_path(student.course, student), class: "btn btn-outline-primary" do %>
                 <i class="fas fa-edit"></i>
               <% end %>
-              <%= link_to [student.course, student], :data => {:confirm => 'Are you sure?'}, :method => :delete, class: "btn btn-outline-primary" do %>
+              <%= link_to [student.course, student], :data => {:confirm => '¿Seguro desea eliminar al alumno?'}, :method => :delete, class: "btn btn-outline-primary" do %>
                 <i class="fas fa-trash"></i>
               <% end %>
             </td>
