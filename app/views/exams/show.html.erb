@@ -40,7 +40,7 @@
                   <td><%= result.object.student.number %></td>
                   <td>
                     <div class="field">
-                      <%= result.number_field :score, class: 'form-control' %>
+                      <%= result.number_field :score, class: 'form-control', step: :any %>
                       <%= result.hidden_field :student_id %>
                     </div>
                   </td>
