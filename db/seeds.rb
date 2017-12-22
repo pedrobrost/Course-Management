@@ -1,5 +1,5 @@
-Course.create(title: 'Ruby', year: 2017)
-Course.create(title: 'Lenguaje C', year: 2017)
+Course.create(year: 2017)
+Course.create(year: 2016)
 
 Course.all.each do |course|
   rand(10..15).times do |i|

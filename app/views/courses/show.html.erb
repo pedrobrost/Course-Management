@@ -1,7 +1,7 @@
 <div class="container box">
   <div class="row">
     <div class="col">
-      <h1><%= @course.title %></h1>
+      <h1><%= @course.year %></h1>
     </div>
     <div class="col text-right">
       <%= link_to 'Editar', edit_course_path(@course), class: "btn btn-info" %>
@@ -9,10 +9,6 @@
       <%= link_to 'Atrás', courses_path, class: "btn btn-secondary" %>
     </div>
   </div>
-  <p>
-    <strong>Año:</strong>
-    <%= @course.year %>
-  </p>
 
   <div class="row">
     <% @course.exams.each do |exam| %>

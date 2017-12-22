@@ -3,7 +3,6 @@ es:
   activerecord:
     attributes:
       course:
-        title: Título
         year: Año
         date: Fecha
       student:
