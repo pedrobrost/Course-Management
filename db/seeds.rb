@@ -4,6 +4,9 @@ Course.create(year: 2016)
 Course.all.each do |course|
   rand(10..15).times do |i|
     name = Faker::RickAndMorty.character.split(/\W+/)
+    if name.size == 1
+      name.push Faker::RickAndMorty.character.split(/\W+/).first
+    end
     email = name.first + '@gmail.com'
 
     Student.create(first_name: name.first,
