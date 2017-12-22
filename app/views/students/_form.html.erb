@@ -1,7 +1,6 @@
 <%= form_for([@student.course, @student]) do |f| %>
   <% if @student.errors.any? %>
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-      <%= pluralize(@student.errors.count, "error") %> prohibited this course from being saved:
       <ul>
       <% @student.errors.full_messages.each do |message| %>
         <li><%= message %></li>
