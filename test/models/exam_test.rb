@@ -46,11 +46,11 @@ class ExamTest < ActiveSupport::TestCase
   end
 
   test 'should not destroy exam if it has scores' do
-    assert_not @exams(:one).destroy
+    assert_not exams(:one).destroy
   end
 
   test 'should destroy exam if it has not scores' do
-    assert_not @exams(:two).destroy
+    assert_not exams(:two).destroy
   end
 
 end
