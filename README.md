@@ -15,7 +15,7 @@ $ git clone git@github.com:pedrobrost/Course-Management.git
 $ cd Course-Management
 ```
 
-Luego se debe instalar las gemas requeridas por el proyecto mediante `Bundler`
+Luego se deben instalar las gemas requeridas por el proyecto mediante `Bundler`
 
 ```bash
 $ bundle install
